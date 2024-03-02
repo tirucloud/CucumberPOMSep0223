@@ -1,4 +1,4 @@
-pipeline
+pipeline:
   agent: any
   stages:
     - stage: Checkout
@@ -11,7 +11,7 @@ pipeline
                         doGenerateSubmoduleConfigurations: false,
                         extensions: [],
                         submoduleCfg: [],
-                        userRemoteConfigs: [[url: 'https://github.com/automationbytes/CucumberPOMSep0223.git']]])
+                        userRemoteConfigs: [[url: 'https://github.com/tirucloud/CucumberPOMSep0223.git']]])
 
     - stage: Build
       steps:
@@ -25,7 +25,7 @@ pipeline
         - script:
             name: Generate Cucumber HTML Reports
             code: |
-              cucumber 'reports/json-reports/reports.json'
+              cucumber "reports/json-reports/reports.json"
 
   post:
     always:
